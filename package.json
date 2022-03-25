@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/guioconnor/testing-github-actions#readme",
   "devDependencies": {
+    "@actions/core": "^1.6.0",
     "@vercel/ncc": "^0.33.3",
     "axios": "^0.26.1"
   }

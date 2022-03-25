@@ -2,6 +2,11 @@ name: 'Hello World'
 description: 'Saying Helo to the world'
 author: 'Gui OConnor <guioconnor@gmail.com>'
 
+inputs:
+  character:
+    description: 'Futurama character'
+    default: 'dr-zoidberg'
+
 runs: 
   using: "node16"
   main: 'dist/index.js'
