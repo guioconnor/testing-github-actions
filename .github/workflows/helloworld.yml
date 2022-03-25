@@ -15,5 +15,5 @@ jobs:
       - run: echo ${{steps.futurama.outputs.quote}}
       - uses: ./
         with:
-          character: bender
+          character: leela
       - run: echo ${{steps.futurama.outputs.quote}}
