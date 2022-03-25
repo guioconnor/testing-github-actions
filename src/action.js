@@ -34,8 +34,7 @@ async function run() {
     console.log(`${d.character}: ${d.quote}`);
   })
 
-  const firstEntry = data[0];
-  core.setOutput('quote', firstEntry);
+  core.setOutput('quotes', data);
 }
 
 run();
