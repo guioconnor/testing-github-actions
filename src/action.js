@@ -8,9 +8,11 @@ async function run() {
   console.log(character);
 
   const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/1`)
+  const firstEntry = data[0];
 
-  console.log(`${data[0].character}: ${data[0].quote}`);
+  console.log(`${firstEntry.character}: ${firstEntry.quote}`);
 
+  core.setOutput('quote', firstEntry);
 }
 
 run();
