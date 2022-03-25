@@ -16,4 +16,5 @@ jobs:
       - uses: ./
         with:
           character: leela
+          quoteCount: 1
       - run: echo ${{steps.futurama.outputs.quote}}

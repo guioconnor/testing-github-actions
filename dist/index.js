@@ -4799,6 +4799,8 @@ const axios = __nccwpck_require__(6545);
 const core = __nccwpck_require__(2186)
 
 const DEFAULT_CHARACTER = 'dr-zoidberg';
+const DEFAULT_QUOTE_COUNT = 1;
+
 
 const AVAILABLE_CHARACTERS = [
   'bender',
@@ -4809,8 +4811,10 @@ const AVAILABLE_CHARACTERS = [
 
 async function run() {
   const character = core.getInput('character') || DEFAULT_CHARACTER;
+  const quoteCount = core.getInput('quoteCount') || DEFAULT_QUOTE_COUNT;
 
   core.debug(`[Futurama] Input character: ${character}`);
+  core.debug(`[Futurama] Quote count: ${quoteCount}`);
 
   if( !AVAILABLE_CHARACTERS.includes(character)){
     core.setFailed(`Unknown character: ${character}`)
@@ -4819,14 +4823,15 @@ async function run() {
 
   core.debug(`[Futurama] Retrieving quote for: ${character}`)
 
-  const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/1`)
+  const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/${quoteCount}`)
 
   core.debug(`[Futurama] Data: ${JSON.stringify(data)}`)
 
+  data.forEach((d)=> {
+    console.log(`${d.character}: ${d.quote}`);
+  })
+
   const firstEntry = data[0];
-
-  console.log(`${firstEntry.character}: ${firstEntry.quote}`);
-
   core.setOutput('quote', firstEntry);
 }
 

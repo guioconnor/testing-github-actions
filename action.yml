@@ -6,6 +6,9 @@ inputs:
   character:
     description: 'Futurama character'
     default: 'dr-zoidberg'
+  quoteCount:
+    description: "Number of quotes to print"
+    default: 1
 
 runs: 
   using: "node16"
