@@ -4800,9 +4800,20 @@ const core = __nccwpck_require__(2186)
 
 const DEFAULT_CHARACTER = 'dr-zoidberg';
 
+const AVAILABLE_CHARACTERS = [
+  'bender',
+  'fry',
+  'leela',
+  'dr-zoidberg'
+]
+
 async function run() {
   const character = core.getInput('character') || DEFAULT_CHARACTER;
-  console.log(character);
+
+  if( !AVAILABLE_CHARACTERS.includes(character)){
+    core.setFailed(`Unknown character: ${character}`)
+    return
+  }
 
   const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/1`)
   const firstEntry = data[0];

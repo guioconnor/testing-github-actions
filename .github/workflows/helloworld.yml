@@ -13,3 +13,7 @@ jobs:
           character: bender
         id: futurama
       - run: echo ${{steps.futurama.outputs.quote}}
+      - uses: ./
+        with:
+          character: gui
+      - run: echo ${{steps.futurama.outputs.quote}}
