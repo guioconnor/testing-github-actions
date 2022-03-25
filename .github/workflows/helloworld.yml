@@ -3,7 +3,7 @@ name: My Workflow
 on: [ push, pull_request ]
 
 jobs:
-  hello-world:
+  print-futurama-quote:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,5 +15,5 @@ jobs:
       - run: echo ${{steps.futurama.outputs.quote}}
       - uses: ./
         with:
-          character: gui
+          character: bender
       - run: echo ${{steps.futurama.outputs.quote}}
