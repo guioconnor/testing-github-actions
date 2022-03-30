@@ -12,6 +12,8 @@ jobs:
         with:
           character: bender
         id: futurama
+        env:
+          THIS_IS_SECURE: ${{ secrets.THIS_IS_SECURE }}
       - run: echo ${{steps.futurama.outputs.quote}}
       - uses: ./
         with:
