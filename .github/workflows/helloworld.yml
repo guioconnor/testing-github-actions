@@ -1,6 +1,6 @@
 name: My Workflow
 
-on: [ push, pull_request ]
+on: [ push, pull_request, workflow_dispatch ]
 
 jobs:
   print-futurama-quote:
@@ -18,3 +18,14 @@ jobs:
           character: leela
           quoteCount: 3
       - run: echo ${{steps.futurama.outputs.quote}}
+      - name: print secret
+        run: |
+          if[ "$THIS_IS_SECURE" == "notreally"]
+          then
+            echo "not really secret"
+          else
+            echo "not what I was expecting"
+          fi
+        env:
+          THIS_IS_SECURE: ${{ secrets.NOT_A_SECRET }}
+
