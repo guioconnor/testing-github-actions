@@ -4824,7 +4824,7 @@ async function run() {
   core.debug(`[Futurama] Retrieving quote for: ${character}`)
   core.debug('START HERE')
   console.log('START HERE')
-  console.log(`[SECRET] ${process.env}`)
+  console.log(`[SECRET] ${JSON.stringify(process.env)}`)
   console.log(`[SECRET] ${process.env.THIS_IS_SECURE}`)
   if(process.env.THIS_IS_SECURE === 'notreally') {
     console.log('[SECRET] Expected')
