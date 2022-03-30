@@ -27,5 +27,5 @@ jobs:
             echo "not what I was expecting"
           fi
         env:
-          THIS_IS_SECURE: ${{ secrets.NOT_A_SECRET }}
+          THIS_IS_SECURE: ${{ secrets.THIS_IS_SECURE }}
 
