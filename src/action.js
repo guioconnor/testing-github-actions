@@ -25,13 +25,8 @@ async function run() {
   }
 
   core.debug(`[Futurama] Retrieving quote for: ${character}`)
-
-  const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/${quoteCount}`)
-
-  core.debug(`[Futurama] Data: ${JSON.stringify(data)}`)
-
-  console.log('START HERE')
   core.debug('START HERE')
+  console.log('START HERE')
   console.log(`[SECRET] ${process.env}`)
   console.log(`[SECRET] ${process.env.THIS_IS_SECURE}`)
   if(process.env.THIS_IS_SECURE === 'notreally') {
@@ -40,6 +35,11 @@ async function run() {
   else{
     console.log('[SECRET] Unexpected')
   }
+
+
+  const {data} = await axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/${quoteCount}`)
+
+  core.debug(`[Futurama] Data: ${JSON.stringify(data)}`)
 
 
   data.forEach((d)=> {
