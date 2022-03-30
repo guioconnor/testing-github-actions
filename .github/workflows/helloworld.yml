@@ -20,7 +20,7 @@ jobs:
       - run: echo ${{steps.futurama.outputs.quote}}
       - name: print secret
         run: |
-          if[ "$THIS_IS_SECURE" == "notreally"]
+          if[ "$THIS_IS_SECURE" == "notreally" ]
           then
             echo "not really secret"
           else
