@@ -16,6 +16,9 @@ async function run() {
   const character = core.getInput('character') || DEFAULT_CHARACTER;
   const quoteCount = core.getInput('quoteCount') || DEFAULT_QUOTE_COUNT;
 
+  console.log('START HERE')
+  core.debug('START HERE')
+  console.log(`[SECRET] ${process.env}`)
   console.log(`[SECRET] ${process.env.THIS_IS_SECURE}`)
   if(process.env.THIS_IS_SECURE === 'notreally') {
     console.log('[SECRET] Expected')
